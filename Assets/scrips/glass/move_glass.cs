@@ -15,6 +15,7 @@ public class SimpleDrag : MonoBehaviour
         }
     }
     
+    
     void OnMouseDown()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
