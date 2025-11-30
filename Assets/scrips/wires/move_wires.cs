@@ -12,7 +12,7 @@ public class SimpleClickTeleport : MonoBehaviour
         
         if (objectToTeleport != null)
         {
-            objectToTeleport.transform.position = targetPosition;
+            objectToTeleport.transform.position = targetPosition; // перемещение объекта
             Debug.Log("Телепортирован: " + objectToTeleport.name);
         }
     }

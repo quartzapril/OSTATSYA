@@ -6,7 +6,6 @@ public class SimpleDrag : MonoBehaviour
     
     void Start()
     {
-        // УБРАЛИ установку тега - используем существующие теги
         // Автоматически добавляем Collider2D если его нет
         if (GetComponent<Collider2D>() == null)
         {
@@ -18,13 +17,13 @@ public class SimpleDrag : MonoBehaviour
     
     void OnMouseDown()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        offset = transform.position - mousePos;
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); //Получает позицию мыши в мировых координатах
+        offset = transform.position - mousePos; //Вычисляет смещение (offset) между позицией объекта и позицией мыши
     }
     
     void OnMouseDrag()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = new Vector3(mousePos.x + offset.x, mousePos.y + offset.y, 0);
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); //Получает текущую позицию мыши в мировых координатах
+        transform.position = new Vector3(mousePos.x + offset.x, mousePos.y + offset.y, 0); //Устанавливает новую позицию объекта с учётом сохранённого смещения
     }
 }

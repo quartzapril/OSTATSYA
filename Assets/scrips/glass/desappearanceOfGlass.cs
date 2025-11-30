@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class desappearanceOfGlass : MonoBehaviour
 {
+    public int cnt_glass = 0;
+    //private SimpleButton simpleButton; // Ссылка на объект
+
     void Start()
     {
         Debug.Log("Корзина активирована: " + gameObject.name);
@@ -22,6 +25,12 @@ public class desappearanceOfGlass : MonoBehaviour
         {
             Debug.Log("🎯 Уничтожаем объект: " + other.name);
             Destroy(other.gameObject);
+            cnt_glass ++;
+            Debug.Log(cnt_glass + ' ');
+            if (cnt_glass == 5)
+            {
+                SimpleButton.GoToSceneHall();
+            }
         }
     }
 }

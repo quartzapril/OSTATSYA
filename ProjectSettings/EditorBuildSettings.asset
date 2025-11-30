@@ -14,6 +14,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/hero_room_scene.unity
     guid: d9305de87c3aa734e9914008351b20a0
+  - enabled: 1
+    path: Assets/Scenes/puzzles.unity
+    guid: 65a37556e84b881489316876de249895
+  - enabled: 1
+    path: Assets/Scenes/glass.unity
+    guid: c8f625c0911ddda40bbb59cc170eba9c
+  - enabled: 1
+    path: Assets/Scenes/wires.unity
+    guid: 678f30a4a6cdb1746a488f4177935f1f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: d1c0b3b806b4250409dd08506de39983, type: 3}
   m_UseUCBPForAssetBundles: 0
