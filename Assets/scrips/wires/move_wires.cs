@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class SimpleClickTeleport : MonoBehaviour
 {
+    public static int cnt_wires = 0;
+    //
+    //
+
     public GameObject objectToTeleport;
     public Vector3 targetPosition = new Vector3(10f, 10f, 10f);
     
@@ -14,6 +18,12 @@ public class SimpleClickTeleport : MonoBehaviour
         {
             objectToTeleport.transform.position = targetPosition; // перемещение объекта
             Debug.Log("Телепортирован: " + objectToTeleport.name);
+            cnt_wires ++;
+            Debug.Log("cnt ="+cnt_wires + ' ');
+            if (cnt_wires == 5)
+            {   cnt_wires = 0;
+                SimpleButton.GoToSceneHall();
+            }
         }
     }
 }

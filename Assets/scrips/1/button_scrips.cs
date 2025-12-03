@@ -16,5 +16,9 @@ public class SimpleButton : MonoBehaviour
     {
         SceneManager.LoadScene("puzzles");
     }
+     public static void GoToSceneWires()
+    {
+        SceneManager.LoadScene("wires");
+    }
 }
 

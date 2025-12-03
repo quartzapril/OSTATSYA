@@ -116,12 +116,12 @@ TextureImporter:
       name: provoda_1_0
       rect:
         serializedVersion: 2
-        x: 351
+        x: 363
         y: 575
-        width: 178
-        height: 66
+        width: 166
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b82e350f70f0d9542a0faab7026a99e6
     internalID: 0
     vertices: []
     indices: 

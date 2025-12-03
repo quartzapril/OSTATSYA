@@ -29,6 +29,7 @@ public class desappearanceOfGlass : MonoBehaviour
             Debug.Log(cnt_glass + ' ');
             if (cnt_glass == 5)
             {
+                cnt_glass = 0;
                 SimpleButton.GoToSceneHall();
             }
         }
