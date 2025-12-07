@@ -20,5 +20,13 @@ public class SimpleButton : MonoBehaviour
     {
         SceneManager.LoadScene("wires");
     }
+    public static void GoToSceneGlass()
+    {
+        SceneManager.LoadScene("glass");
+    }
+     public static void GoToSceneDay2()
+    {
+        SceneManager.LoadScene("day2");
+    }
 }
 
