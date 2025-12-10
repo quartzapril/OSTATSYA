@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cbf150883d6e41549bbb961dda8c61c8
+guid: 07eb15f51cd4b184196620a11c920eb5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5120224674601135964
-    second: hallway_0
+      213: -6602562343734672166
+    second: hall2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hallway_0
+      name: hall2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -121,15 +121,15 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c5f6ac3a631be0740800000000000000
-      internalID: 5120224674601135964
+      spriteID: ad4035eb78cfe54a0800000000000000
+      internalID: -6602562343734672166
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9f6c751db31117d4c861872e2181d666
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      hallway_0: 5120224674601135964
+      hall2_0: -6602562343734672166
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
