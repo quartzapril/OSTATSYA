@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/1.unity
     guid: ceb9f6e9df9d31f49aeb2afe2d76d8c9
   - enabled: 1
-    path: Assets/Scenes/hero_room_scene.unity
+    path: Assets/Scenes/rooms/hero_room_scene.unity
     guid: d9305de87c3aa734e9914008351b20a0
   - enabled: 1
     path: Assets/Scenes/puzzles.unity
