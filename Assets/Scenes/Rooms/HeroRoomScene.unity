@@ -119,6 +119,40 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &474491015 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1834174065430514655, guid: 58bb8bc258faa1245afd7a3f635c0408, type: 3}
+  m_PrefabInstance: {fileID: 8140190387408675788}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &1159216202 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2484175544306679951, guid: 58bb8bc258faa1245afd7a3f635c0408, type: 3}
+  m_PrefabInstance: {fileID: 8140190387408675788}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1159216207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159216202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21126d23d91d31c4d9ea4237c93b0c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue2
+  textComponent: {fileID: 474491015}
+  lines:
+  - 3423432
+  - 31232435
+  textSpeed: 0
+  cnt: 2
 --- !u!1 &1160012674
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,7 +464,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2484175544306679951, guid: 58bb8bc258faa1245afd7a3f635c0408, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1159216207}
   m_SourcePrefab: {fileID: 100100000, guid: 58bb8bc258faa1245afd7a3f635c0408, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
