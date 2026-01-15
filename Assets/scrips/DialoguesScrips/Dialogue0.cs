@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class Dialogue2 : MonoBehaviour // скрипт для диалогов 2 дня
+public class Dialogue0 : MonoBehaviour // скрипт для диалогов 0 дня
 {
     public TextMeshProUGUI textComponent;
     public string[] lines;
@@ -12,11 +12,12 @@ public class Dialogue2 : MonoBehaviour // скрипт для диалогов 2
 
     private int index;
     public int cnt = 2;
+    public int cntPause = 0;
    
 
     void Start()
     {
-        if (globalVariables.Day2){
+        if (GlobalVariables.Day0){
             textComponent.text = string.Empty;
             StartDialogue();
     }
@@ -25,7 +26,7 @@ public class Dialogue2 : MonoBehaviour // скрипт для диалогов 2
 
     void Update()
     {
-        if (globalVariables.Day2){
+        if (GlobalVariables.Day0){
             if (Input.GetMouseButtonDown(0))
             {
                 if (textComponent.text == lines[index])
@@ -38,26 +39,30 @@ public class Dialogue2 : MonoBehaviour // скрипт для диалогов 2
                     textComponent.text = lines[index];
                 }
                 cnt --;
-                if (cnt == 0)
-            {
-                    switch (SceneManager.GetActiveScene().name)
-                    {
-                        case "room1":
-                            globalVariables.doneRoom1 = true;
-                            Debug.Log("doneRoom1");
-                            break;
-                        case "room2":
-                            globalVariables.doneRoom2 = true;
-                            break;
-                        case "room3":
-                            globalVariables.doneRoom3 = true;
-                            break;
-                        case "room4":
-                            globalVariables.doneRoom4 = true;
-                            break;
-                    }
-                //SceneManager.LoadScene("1");
-            }
+            //     if (cnt == cntPause)
+            // {
+            //         switch (SceneManager.GetActiveScene().name)
+            //         {
+            //             case "Room1":
+            //                 GlobalVariables.DoneRoom1 = true;
+            //                 Debug.Log("doneRoom1");
+            //                 break;
+            //             case "Room2":
+            //                 GlobalVariables.DoneRoom2 = true;
+            //                 break;
+            //             case "Room3":
+            //                 GlobalVariables.DoneRoom3 = true;
+            //                 break;
+            //             case "Room4":
+            //                 GlobalVariables.DoneRoom4 = true;
+            //                 break;
+            //         }
+            //     //globalVariables.Day1 = false;
+
+            //     //GlobalVariables.Day0 = true;
+            //     //Debug.Log("Day0 = true");
+            //     SceneManager.LoadScene("1");
+            // }
             } 
     }
     }
@@ -87,6 +92,8 @@ public class Dialogue2 : MonoBehaviour // скрипт для диалогов 2
         }
         else
         {
+            SceneManager.LoadScene("1");
+
             gameObject.SetActive(false);
             
         }

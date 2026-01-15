@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class globalVariables : MonoBehaviour
+public class GlobalVariables : MonoBehaviour
 {
-    public static bool doneRoom1 = false;
-    public static bool doneRoom2 = false;
-    public static bool doneRoom3 = false;
-    public static bool doneRoom4 = false;
+    public static bool DoneRoom1 = false;
+    public static bool DoneRoom2 = false;
+    public static bool DoneRoom3 = false;
+    public static bool DoneRoom4 = false;
 
 
-    public static bool Day1 = true;
-    public static bool Day2 = false;
+    public static bool Day0 = true;
+    public static bool Day1 = false;
 
 
 
