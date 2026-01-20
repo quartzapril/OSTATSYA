@@ -23,9 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Games/Wires.unity
     guid: 678f30a4a6cdb1746a488f4177935f1f
-  - enabled: 0
-    path: Assets/Scenes/day2.unity
-    guid: 720cc89a7df15114ba9d85d7c56f93b7
   - enabled: 1
     path: Assets/Scenes/Rooms/Room1.unity
     guid: f1015720a8d10de4ea5b2327a87d5652
@@ -41,6 +38,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Example.unity
     guid: 2e251b07a5a8a8d4b826bf7fa5c5620a
+  - enabled: 1
+    path: Assets/Scenes/BlackWindow.unity
+    guid: b7187e5399fda4a4884866d8893a4709
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: d1c0b3b806b4250409dd08506de39983, type: 3}
   m_UseUCBPForAssetBundles: 0

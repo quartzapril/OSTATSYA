@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class Dialogue1 : MonoBehaviour // скрипт для диалогов 11 дня
+public class HallwqyDial : MonoBehaviour // 
 {
     public TextMeshProUGUI textComponent;
     public string[] lines;
@@ -13,11 +13,11 @@ public class Dialogue1 : MonoBehaviour // скрипт для диалогов 1
     private int index;
     public int cnt = 2;
     public int cntPause = 0;
-   
+   public string sceneName1 = "1";
 
     void Start()
     {
-        if (GlobalVariables.Day1){
+        if (GlobalVariables.Day0){
             textComponent.text = string.Empty;
             StartDialogue();
     }
@@ -26,7 +26,7 @@ public class Dialogue1 : MonoBehaviour // скрипт для диалогов 1
 
     void Update()
     {
-        if (GlobalVariables.Day1){
+        if (GlobalVariables.Day0){
             if (Input.GetMouseButtonDown(0))
             {
                 if (textComponent.text == lines[index])
@@ -39,26 +39,6 @@ public class Dialogue1 : MonoBehaviour // скрипт для диалогов 1
                     textComponent.text = lines[index];
                 }
                 cnt --;
-            //     if (cnt == cntPause)
-            // {
-            //         switch (SceneManager.GetActiveScene().name)
-            //         {
-            //             case "Room1":
-            //                 GlobalVariables.DoneRoom1 = true;
-            //                 Debug.Log("doneRoom1");
-            //                 break;
-            //             case "Room2":
-            //                 GlobalVariables.DoneRoom2 = true;
-            //                 break;
-            //             case "Room3":
-            //                 GlobalVariables.DoneRoom3 = true;
-            //                 break;
-            //             case "Room4":
-            //                 GlobalVariables.DoneRoom4 = true;
-            //                 break;
-            //         }
-            //     SceneManager.LoadScene("1");
-            //}
             } 
     }
     }
@@ -88,7 +68,8 @@ public class Dialogue1 : MonoBehaviour // скрипт для диалогов 1
         }
         else
         {
-            //SceneManager.LoadScene("1");
+            SceneManager.LoadScene(sceneName1);
+
             gameObject.SetActive(false);
             
         }
