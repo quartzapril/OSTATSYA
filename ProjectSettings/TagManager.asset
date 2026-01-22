@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - PillSlot
+  - Peretaskivanie
+  - PillBlue
+  - PillOrange
+  - PillYellow
+  - PillPink
+  - PillGreen
+  - PillIndigo
   layers:
   - Default
   - TransparentFX
