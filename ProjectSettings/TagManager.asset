@@ -12,6 +12,7 @@ TagManager:
   - PillPink
   - PillGreen
   - PillIndigo
+  - Tomato
   layers:
   - Default
   - TransparentFX

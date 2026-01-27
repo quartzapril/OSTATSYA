@@ -11,65 +11,65 @@ public class GameManager : MonoBehaviour {
   private int size;
   private bool shuffling = false;
 
-  // Create the game setup with size x size pieces.
+  // Создает игровое поле с size x size элементами.
   private void CreateGamePieces(float gapThickness) {
-    // This is the width of each tile.
+    // Ширина каждого тайла.
     float width = 1 / (float)size;
     for (int row = 0; row < size; row++) {
       for (int col = 0; col < size; col++) {
         Transform piece = Instantiate(piecePrefab, gameTransform);
         pieces.Add(piece);
-        // Pieces will be in a game board going from -1 to +1.
+        // Тайлы располагаются на игровом поле в диапазоне от -1 до +1.
         piece.localPosition = new Vector3(-1 + (2 * width * col) + width,
                                           +1 - (2 * width * row) - width,
                                           0);
         piece.localScale = ((2 * width) - gapThickness) * Vector3.one;
         piece.name = $"{(row * size) + col}";
-        // We want an empty space in the bottom right.
+        // Пустое место должно быть в правом нижнем углу.
         if ((row == size - 1) && (col == size - 1)) {
           emptyLocation = (size * size) - 1;
           piece.gameObject.SetActive(false);
         } else {
-          // We want to map the UV coordinates appropriately, they are 0->1.
+          // Настраиваем UV координаты соответствующим образом, они в диапазоне 0->1.
           float gap = gapThickness / 2;
           Mesh mesh = piece.GetComponent<MeshFilter>().mesh;
           Vector2[] uv = new Vector2[4];
-          // UV coord order: (0, 1), (1, 1), (0, 0), (1, 0)
+          // Порядок UV координат: (0, 1), (1, 1), (0, 0), (1, 0)
           uv[0] = new Vector2((width * col) + gap, 1 - ((width * (row + 1)) - gap));
           uv[1] = new Vector2((width * (col + 1)) - gap, 1 - ((width * (row + 1)) - gap));
           uv[2] = new Vector2((width * col) + gap, 1 - ((width * row) + gap));
           uv[3] = new Vector2((width * (col + 1)) - gap, 1 - ((width * row) + gap));
-          // Assign our new UVs to the mesh.
+          // Присваиваем новые UV координаты сетке.
           mesh.uv = uv;
         }
       }
     }
   }
 
-  // Start is called before the first frame update
+  // Вызывается перед первым кадром
   void Start() {
     pieces = new List<Transform>();
     size = 4;
     CreateGamePieces(0.01f);
   }
 
-  // Update is called once per frame
+  // Вызывается каждый кадр
   void Update() {
-    // Check for completion.
+    // Проверка на завершение игры.
     if (!shuffling && CheckCompletion()) {
       shuffling = true;
       StartCoroutine(WaitShuffle(0.5f));
     }
 
-    // On click send out ray to see if we click a piece.
+    // При клике отправляем луч, чтобы проверить, кликнули ли мы на элемент.
     if (Input.GetMouseButtonDown(0)) {
       RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
       if (hit) {
-        // Go through the list, the index tells us the position.
+        // Проходим по списку, индекс указывает на позицию.
         for (int i = 0; i < pieces.Count; i++) {
           if (pieces[i] == hit.transform) {
-            // Check each direction to see if valid move.
-            // We break out on success so we don't carry on and swap back again.
+            // Проверяем каждое направление на допустимость хода.
+            // Выходим при успехе, чтобы не выполнить обратный обмен.
             if (SwapIfValid(i, -size, size)) { break; }
             if (SwapIfValid(i, +size, size)) { break; }
             if (SwapIfValid(i, -1, 0)) { break; }
@@ -80,21 +80,21 @@ public class GameManager : MonoBehaviour {
     }
   }
 
-  // colCheck is used to stop horizontal moves wrapping.
+  // colCheck используется для предотвращения горизонтальных ходов с переносом.
   private bool SwapIfValid(int i, int offset, int colCheck) {
     if (((i % size) != colCheck) && ((i + offset) == emptyLocation)) {
-      // Swap them in game state.
+      // Меняем местами в игровом состоянии.
       (pieces[i], pieces[i + offset]) = (pieces[i + offset], pieces[i]);
-      // Swap their transforms.
+      // Меняем местами их трансформы.
       (pieces[i].localPosition, pieces[i + offset].localPosition) = ((pieces[i + offset].localPosition, pieces[i].localPosition));
-      // Update empty location.
+      // Обновляем позицию пустого места.
       emptyLocation = i;
       return true;
     }
     return false;
   }
 
-  // We name the pieces in order so we can use this to check completion.
+  // Мы назвали элементы по порядку, чтобы использовать это для проверки завершения.
   private bool CheckCompletion() {
     for (int i = 0; i < pieces.Count; i++) {
       if (pieces[i].name != $"{i}") {
@@ -110,17 +110,17 @@ public class GameManager : MonoBehaviour {
     shuffling = false;
   }
 
-  // Brute force shuffling.
+  // Перемешивание "грубой силой".
   private void Shuffle() {
     int count = 0;
     int last = 0;
     while (count < (size * size * size)) {
-      // Pick a random location.
+      // Выбираем случайную позицию.
       int rnd = Random.Range(0, size * size);
-      // Only thing we forbid is undoing the last move.
+      // Единственное, что запрещаем - отмену последнего хода.
       if (rnd == last) { continue; }
       last = emptyLocation;
-      // Try surrounding spaces looking for valid move.
+      // Проверяем окружающие позиции в поисках допустимого хода.
       if (SwapIfValid(rnd, -size, size)) {
         count++;
       } else if (SwapIfValid(rnd, +size, size)) {

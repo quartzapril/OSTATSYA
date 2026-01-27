@@ -2,17 +2,17 @@ using UnityEngine;
 
 public class GlobalVariables : MonoBehaviour
 {
-    public static bool DoneRoom1 = false;
+    public static bool DoneRoom1 = false; //выполнен диалог в комнате1
     public static bool DoneRoom2 = false;
     public static bool DoneRoom3 = false;
     public static bool DoneRoom4 = false;
     public static bool DoneCabinet = false;
 
 
-    public static bool DialogueAfter1 = false;
+    //public static bool DialogueAfter1 = false;
 
 
-    public static bool Day0 = true;
+    public static bool Day0 = true; //флаг для дня 1
     public static bool Day1 = false;
 
 

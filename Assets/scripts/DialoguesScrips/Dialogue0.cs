@@ -106,6 +106,7 @@ public class Dialogue0 : MonoBehaviour
     // Создаем черный экран для затемнения
     void CreateFadeImage()
     {
+        fadeImage.raycastTarget = false; 
         Canvas canvas = FindObjectOfType<Canvas>();
         if (canvas == null)
         {

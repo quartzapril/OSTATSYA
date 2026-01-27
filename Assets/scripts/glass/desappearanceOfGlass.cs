@@ -18,7 +18,7 @@ public class desappearanceOfGlass : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other) // уничтожаем объект
     {
         if (other.gameObject != this.gameObject)
         {
