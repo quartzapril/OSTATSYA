@@ -41,6 +41,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BlackWindow.unity
     guid: b7187e5399fda4a4884866d8893a4709
+  - enabled: 1
+    path: Assets/Scenes/Games/Tablet.unity
+    guid: 74332a00c6681024abde1c9cf3b651d3
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: d1c0b3b806b4250409dd08506de39983, type: 3}
   m_UseUCBPForAssetBundles: 0

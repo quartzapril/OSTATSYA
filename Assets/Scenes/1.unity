@@ -791,7 +791,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 499849931}
         m_TargetAssemblyTypeName: SimpleButton, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: GoToSceneRoom3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -949,7 +949,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 547840616}
         m_TargetAssemblyTypeName: SimpleButton, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: GoToSceneRoom4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2148,7 +2148,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 789819639}
         m_TargetAssemblyTypeName: SimpleButton, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: GoToSceneRoom1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2557,7 +2557,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 816708105}
         m_TargetAssemblyTypeName: SimpleButton, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: GoToSceneHeroRoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3518,7 +3518,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1233695225}
         m_TargetAssemblyTypeName: SimpleButton, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: GoToSceneRoom2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

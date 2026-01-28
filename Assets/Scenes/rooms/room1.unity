@@ -119,6 +119,81 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &34933526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 34933527}
+  - component: {fileID: 34933529}
+  - component: {fileID: 34933528}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &34933527
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34933526}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 8.9783535, y: 8.9783535, z: 8.9783535}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 415557781621001309}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 491, y: -96}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &34933528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34933526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 5356468264117738843, guid: e46a42a170310b440819ab582c9dfbd2, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &34933529
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34933526}
+  m_CullTransparentMesh: 1
 --- !u!1001 &672008663
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -491,6 +566,7 @@ RectTransform:
   m_Children:
   - {fileID: 5772365549093498145}
   - {fileID: 1334312631722422724}
+  - {fileID: 34933527}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -739,7 +815,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -861,6 +937,7 @@ GameObject:
   - component: {fileID: 8417755406471966450}
   - component: {fileID: 620683178152806578}
   - component: {fileID: 8417755406471966451}
+  - component: {fileID: 8417755406471966452}
   m_Layer: 5
   m_Name: DualogueBox
   m_TagString: Untagged
@@ -1166,7 +1243,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c095a5efe17ddab4d818214ca7362d3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UltraSimpleFade
-  blackScreen: {fileID: 707917357}
+--- !u!114 &8417755406471966452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2484175543170371964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2579e694fe5f8443aacf03c28810424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue1
+  textComponent: {fileID: 1834174066572302892}
+  backgroundImage: {fileID: 2262928078597527824}
+  newPicture: {fileID: 6941503140157804216, guid: aa9d1bccbccd9f846bd0f9df9d09fd22, type: 3}
+  newPicture1: {fileID: 0}
+  lines:
+  - "\\n\u041F\u043E\u0445\u043E\u0436\u0435, \u043E\u043D \u0435\u0449\u0451 \u0441\u043F\u0438\u0442"
+  - "\u041A\u0430\u043F\u0438\u0442\u0430\u043D\\n\u2014 *\u0413\u0440\u043E\u043C\u043A\u0438\u0439
+    \u0445\u0440\u0430\u043F* "
+  - "\\n\u0421 \u043D\u0438\u043C \u0432\u0441\u0451 \u0432 \u043F\u043E\u0440\u044F\u0434\u043A\u0435. "
+  textSpeed: 0.05
+  index0: 0
+  index1: 0
+  sceneName1: 1
 --- !u!1 &8841954587413477776
 GameObject:
   m_ObjectHideFlags: 0

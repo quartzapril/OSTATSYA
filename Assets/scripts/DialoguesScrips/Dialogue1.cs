@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Dialogue0 : MonoBehaviour
+public class Dialogue1 : MonoBehaviour
 {
     // Компоненты UI
     public TextMeshProUGUI textComponent;      // Поле для текста диалога
@@ -27,7 +27,7 @@ public class Dialogue0 : MonoBehaviour
     {
         CreateFadeImage();
         
-        if (GlobalVariables.Day0)
+        if (GlobalVariables.Day1)
         {
             textComponent.text = string.Empty;
             StartDialogue();
@@ -36,8 +36,8 @@ public class Dialogue0 : MonoBehaviour
 
     // Проверяем клик мыши в каждом кадре
     void Update()
-    {if (GlobalVariables.Day0){
-        if (GlobalVariables.Day0 && Input.GetMouseButtonDown(0))
+    {
+        if (GlobalVariables.Day1 && Input.GetMouseButtonDown(0))
         {
             if (textComponent.text == lines[index])
             {
@@ -49,7 +49,7 @@ public class Dialogue0 : MonoBehaviour
                 textComponent.text = lines[index];
             }
         }
-    }}
+    }
 
     // Начинаем диалог с первой строки
     void StartDialogue()
@@ -70,7 +70,7 @@ public class Dialogue0 : MonoBehaviour
 
     // Переходим к следующей строке или заканчиваем диалог
     void NextLine()
-    { if (GlobalVariables.Day0){
+    {
         if (index < lines.Length - 1)
         {
             index++;
@@ -92,31 +92,25 @@ public class Dialogue0 : MonoBehaviour
             // Сохраняем прогресс
             switch (SceneManager.GetActiveScene().name)
             {
-                case "Room1": GlobalVariables.DoneRoom1 = true; break;
-                case "Room2": GlobalVariables.DoneRoom2 = true; break;
-                case "Room3": GlobalVariables.DoneRoom3 = true; break;
-                case "Room4": GlobalVariables.DoneRoom4 = true; break;
+                case "Room1": GlobalVariables.DoneRoom11 = true; break;
+                case "Room2": GlobalVariables.DoneRoom12 = true; break;
+                case "Room3": GlobalVariables.DoneRoom13 = true; break;
+                case "Room4": GlobalVariables.DoneRoom14 = true; break;
+            }
+            if (SceneManager.GetActiveScene().name == "Room4")
+            {
+                SceneManager.LoadScene("Tablet");
+
             }
             
-            if (GlobalVariables.DoneRoom1 && GlobalVariables.DoneRoom2 && GlobalVariables.DoneRoom3 && GlobalVariables.DoneRoom4)
-            {
-                    GlobalVariables.Day0 = false;
-                    GlobalVariables.Day1 = true;
-
-                    
-                
-            }
             // Затемняем и переходим
             StartCoroutine(FadeAndLoad());
         }
-    }}
+    }
     
     // Создаем черный экран для затемнения
     void CreateFadeImage()
     {
-        // Если fadeImage уже создан, ничего не делаем
-        if (fadeImage != null) return;
-        
         Canvas canvas = FindObjectOfType<Canvas>();
         if (canvas == null)
         {
@@ -132,7 +126,7 @@ public class Dialogue0 : MonoBehaviour
         
         fadeImage = fadeObj.AddComponent<Image>();
         fadeImage.color = new Color(0, 0, 0, 0);
-        fadeImage.raycastTarget = false; // Перемещено после создания fadeImage
+        fadeImage.raycastTarget = false;
         
         RectTransform rt = fadeObj.GetComponent<RectTransform>();
         rt.anchorMin = Vector2.zero;
