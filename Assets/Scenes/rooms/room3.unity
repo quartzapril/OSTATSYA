@@ -367,6 +367,7 @@ MonoBehaviour:
   index0: 0
   index1: 0
   sceneName1: 1
+  Image: {fileID: 0}
 --- !u!224 &1334312631178439990
 RectTransform:
   m_ObjectHideFlags: 0
@@ -461,7 +462,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -720,6 +721,7 @@ MonoBehaviour:
   newPicture: {fileID: 0}
   newPicture1: {fileID: 0}
   newPicture0: {fileID: 0}
+  Image: {fileID: 0}
   lines:
   - "\u0410\u043B\u0435\u043A\u0441\\n\u2014 \u041F\u0440\u0438\u0432\u0435\u0442.
     \u041A\u0430\u043A \u0443 \u0442\u0435\u0431\u044F \u0434\u0435\u043B\u0430? "

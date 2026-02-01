@@ -366,7 +366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   textComponent: {fileID: 1834174065327907589}
   backgroundImage: {fileID: 2262928079842975801}
-  newPicture: {fileID: -6602562343734672166, guid: 07eb15f51cd4b184196620a11c920eb5, type: 3}
+  newPicture: {fileID: 2293940408251770034, guid: fa267bb4f6218fe4aa1511e62026b611, type: 3}
   newPicture1: {fileID: -2638850039265540144, guid: 0ca19464a277bfd41b35d568e5738bcd, type: 3}
   lines:
   - "\u0410\u043B\u0435\u043A\u0441\\n\u2014 \u0417\u0434\u0440\u2026"
@@ -415,6 +415,7 @@ MonoBehaviour:
   index0: 2
   index1: 5
   sceneName1: 1
+  Image: {fileID: 666873699}
 --- !u!224 &1334312630822471917
 RectTransform:
   m_ObjectHideFlags: 0
@@ -509,7 +510,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

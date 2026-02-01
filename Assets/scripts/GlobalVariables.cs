@@ -5,10 +5,10 @@ public class GlobalVariables : MonoBehaviour
 
     public static bool flagWires = false;
 
-    public static bool DoneRoom1 = true; //выполнен диалог в комнате1
-    public static bool DoneRoom2 =  true;
-    public static bool DoneRoom3 = true;
-    public static bool DoneRoom4 = true;
+    public static bool DoneRoom1 = false; //выполнен диалог в комнате1
+    public static bool DoneRoom2 =  false;
+    public static bool DoneRoom3 = false;
+    public static bool DoneRoom4 = false;
     public static bool DoneCabinet = false;
 
 

@@ -30,6 +30,7 @@ public class Dialogue1 : MonoBehaviour
 
     void Start()
     {
+        if (GlobalVariables.Day1){
         originalColor0 = Image.color;
 
         if (SceneManager.GetActiveScene().name == "room1" || SceneManager.GetActiveScene().name == "room2")
@@ -38,7 +39,7 @@ public class Dialogue1 : MonoBehaviour
             Color originalColor = Image.color;
             originalColor.a = 0f;
             Image.color = originalColor;
-        }
+        }}
         
         CreateFadeImage();
         
@@ -67,7 +68,7 @@ public class Dialogue1 : MonoBehaviour
         }
     }
 
-    // НОВЫЙ МЕТОД - проверяет, находится ли курсор над UI объектом
+    // проверяет, находится ли курсор над UI объектом
     private bool IsPointerOverUIObject()
     {
         // Создаем событие для проверки
