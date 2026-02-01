@@ -3,7 +3,7 @@ using UnityEngine;
 public class SimpleClickTeleport : MonoBehaviour
 {
     public static int cnt_wires = 0;
-    public static bool flagWires = false; // флаг выполнено ли задание по починке проводов
+    //public static bool flagWires = false; // флаг выполнено ли задание по починке проводов
 
 
     public GameObject objectToTeleport; // Объект, который будет телепортирован при клике
@@ -22,17 +22,10 @@ public class SimpleClickTeleport : MonoBehaviour
             Destroy(destroyArrow); //уничтожение объекта
             if (cnt_wires >= 5) // Проверяем, выполнено ли задание (исправлено 5 и более проводов)
             {   
-                flagWires = true;
+                GlobalVariables.flagWires = true;
                 cnt_wires = 0;
-                if (flagWires == true && desappearanceOfGlass.flagGlass == true) 
-                {
-                    Days.Day ++;
-                    SimpleButton.GoToSceneDay2();
-                }
-                else
-                {
-                    SimpleButton.GoToSceneHall();
-            }}
+                SimpleButton.GoToSceneHall();
+            }
         }
     }
 }

@@ -102,6 +102,7 @@ public class Dialogue0 : MonoBehaviour
             {
                     GlobalVariables.Day0 = false;
                     GlobalVariables.Day1 = true;
+                    GlobalVariables.Day1BlackHall = true;
 
                     
                 
