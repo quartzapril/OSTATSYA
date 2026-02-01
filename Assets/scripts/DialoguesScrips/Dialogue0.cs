@@ -19,12 +19,24 @@ public class Dialogue0 : MonoBehaviour
     public int index0;                         // Когда менять на первую картинку
     public int index1;                         // Когда менять на вторую картинку
     public string sceneName1;                  // Куда переходить после диалога
-    
+    public Image Image; //Для удаления существующей картинки персонажа
+    private Color originalColor0;
     // Для затемнения
     private Image fadeImage;                   // Черный экран для перехода
 
     void Start()
     {
+
+
+        if (GlobalVariables.Day0){
+        originalColor0 = Image.color;
+
+        if (SceneManager.GetActiveScene().name == "room2")
+        {
+            Color originalColor = Image.color;
+            originalColor.a = 0f;
+            Image.color = originalColor;
+        }}
         CreateFadeImage();
         
         if (GlobalVariables.Day0)
@@ -84,6 +96,10 @@ public class Dialogue0 : MonoBehaviour
             }
             if (index == index1 && backgroundImage != null && newPicture1 != null)
             {
+                if (SceneManager.GetActiveScene().name == "room2")
+                {
+                    Image.color = originalColor0;
+                }
                 backgroundImage.sprite = newPicture1;
             }
         }
@@ -102,6 +118,7 @@ public class Dialogue0 : MonoBehaviour
             {
                     GlobalVariables.Day0 = false;
                     GlobalVariables.Day1 = true;
+                    GlobalVariables.Day1BlackHall = true;
 
                     
                 

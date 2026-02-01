@@ -3,6 +3,8 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+using System.Collections.Generic; 
 
 public class Dialogue1 : MonoBehaviour
 {
@@ -11,20 +13,34 @@ public class Dialogue1 : MonoBehaviour
     public Image backgroundImage;              // Картинка фона
     public Sprite newPicture;                  // Первая картинка для смены
     public Sprite newPicture1;                 // Вторая картинка для смены
+    public Sprite newPicture0;                 // Картинка для смены в самом начале
+    public Image Image; //Для удаления существующей картинки персонажа
     
     // Настройки диалога
     public string[] lines;                     // Строки диалога
     public float textSpeed;                    // Скорость печати
-    private int index;                         // Номер текущей строки
+    public static int index;                         // Номер текущей строки
     public int index0;                         // Когда менять на первую картинку
     public int index1;                         // Когда менять на вторую картинку
     public string sceneName1;                  // Куда переходить после диалога
     
     // Для затемнения
     private Image fadeImage;                   // Черный экран для перехода
+    private Color originalColor0;
 
     void Start()
     {
+        if (GlobalVariables.Day1){
+        originalColor0 = Image.color;
+
+        if (SceneManager.GetActiveScene().name == "room1" || SceneManager.GetActiveScene().name == "room2")
+        {
+            backgroundImage.sprite = newPicture0;
+            Color originalColor = Image.color;
+            originalColor.a = 0f;
+            Image.color = originalColor;
+        }}
+        
         CreateFadeImage();
         
         if (GlobalVariables.Day1)
@@ -37,7 +53,8 @@ public class Dialogue1 : MonoBehaviour
     // Проверяем клик мыши в каждом кадре
     void Update()
     {
-        if (GlobalVariables.Day1 && Input.GetMouseButtonDown(0))
+        // ИЗМЕНИЛИ УСЛОВИЕ - проверяем не над UI ли клик
+        if (GlobalVariables.Day1 && Input.GetMouseButtonDown(0) && !IsPointerOverUIObject())
         {
             if (textComponent.text == lines[index])
             {
@@ -49,6 +66,21 @@ public class Dialogue1 : MonoBehaviour
                 textComponent.text = lines[index];
             }
         }
+    }
+
+    // проверяет, находится ли курсор над UI объектом
+    private bool IsPointerOverUIObject()
+    {
+        // Создаем событие для проверки
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        
+        // Получаем список всех UI объектов под курсором
+        var results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        
+        // Если есть UI объекты под курсором - возвращаем true
+        return results.Count > 0;
     }
 
     // Начинаем диалог с первой строки
@@ -77,9 +109,17 @@ public class Dialogue1 : MonoBehaviour
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
             
+            if (index == 2 && SceneManager.GetActiveScene().name == "HeroRoomScene")
+            {
+                GlobalVariables.CalFlag = true;
+            }
             // Меняем картинку фона
             if (index == index0 && backgroundImage != null && newPicture != null)
             {
+                if (SceneManager.GetActiveScene().name == "room2")
+                {
+                    Image.color = originalColor0;
+                }
                 backgroundImage.sprite = newPicture;
             }
             if (index == index1 && backgroundImage != null && newPicture1 != null)
@@ -100,7 +140,6 @@ public class Dialogue1 : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "Room4")
             {
                 SceneManager.LoadScene("Tablet");
-
             }
             
             // Затемняем и переходим
