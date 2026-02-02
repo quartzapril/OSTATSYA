@@ -30,8 +30,8 @@ public class GlobalVariables : MonoBehaviour
     //public static bool DialogueAfter1 = false;
 
 
-    public static bool Day0 = false; //флаг для дня 1
-    public static bool Day1 = true;
+    public static bool Day0 = true; //флаг для дня 1
+    public static bool Day1 = false;
 
 
 
