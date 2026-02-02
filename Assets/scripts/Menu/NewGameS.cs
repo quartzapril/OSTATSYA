@@ -81,12 +81,5 @@ public class StartGame : MonoBehaviour
         fadeObj.SetActive(false);
     }
 
-    // Альтернатива: если хотите один черный экран на всю игру
-    void Start()
-    {
-        // Создаем черный экран сразу, но скрытым
-        CreateFadeImage();
-        if (fadeImage != null)
-            fadeImage.gameObject.SetActive(false);
-    }
+   
 }
