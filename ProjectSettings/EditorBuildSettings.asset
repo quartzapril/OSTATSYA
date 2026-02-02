@@ -45,11 +45,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Games/Tablet.unity
     guid: 74332a00c6681024abde1c9cf3b651d3
   - enabled: 1
-    path: Assets/Scenes/MainMENU.unity
+    path: Assets/Scenes/mainMenu.unity
     guid: 43352ce3fb0e8c64483b88a384ff2563
   - enabled: 1
     path: Assets/Scenes/Rooms/Cabinet.unity
     guid: 6984548f6cbeb0a469a755f3a33bb007
+  - enabled: 1
+    path: Assets/Scenes/DaysNames.unity
+    guid: d00a6a8fd8a927741977ef25d244b780
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: d1c0b3b806b4250409dd08506de39983, type: 3}
   m_UseUCBPForAssetBundles: 0

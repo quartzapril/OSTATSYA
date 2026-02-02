@@ -1,11 +1,7 @@
 using System.Collections;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.EventSystems;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 public class BlackHall : MonoBehaviour
 {
@@ -13,14 +9,13 @@ public class BlackHall : MonoBehaviour
     public Sprite newPicture;
     public Sprite newPicture1;                  // Первая картинка для смены
 
-
     void Start()
     {
         if (SceneManager.GetActiveScene().name == "1" && GlobalVariables.Day1 && GlobalVariables.Day1BlackHall)
         {
             backgroundImage.sprite = newPicture;
-
         }
+        
         if (SceneManager.GetActiveScene().name == "1" && GlobalVariables.flagWires == true)
         {
             backgroundImage.sprite = newPicture1;
@@ -34,13 +29,23 @@ public class BlackHall : MonoBehaviour
             }
             else if (GlobalVariables.Day1 == true)
             {
-                                backgroundImage.sprite = newPicture1;
-
+                backgroundImage.sprite = newPicture1;
             }
+            
+            // Запускаем таймер на 10 секунд
+            StartCoroutine(TenSecondTimer());
         }
     }
 
-    // Update is called once per frame
+    IEnumerator TenSecondTimer()
+    {
+        // Ждем 10 секунд
+        yield return new WaitForSeconds(5f);
+        
+        Debug.Log("5 секунд прошло!");
+        SceneManager.LoadScene("HeroRoomScene");
+    }
+
     void Update()
     {
         
