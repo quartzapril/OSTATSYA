@@ -20,12 +20,12 @@ public class ResumeGame : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Предыдущая сцена не сохранена! Проверьте скрипт перехода в меню.");
+                Debug.LogError("Предыдущая сцена не сохранена.");
             }
         }
         else
         {
-            Debug.LogWarning("Кнопка 'Продолжить игру' нажата не из меню. Остаемся здесь.");
+            Debug.LogWarning("Кнопка 'Продолжить игру' нажата не из меню.");
         }
 
     }
