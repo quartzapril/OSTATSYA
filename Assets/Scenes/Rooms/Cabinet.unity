@@ -303,6 +303,10 @@ PrefabInstance:
       propertyPath: sceneName1
       value: HeroRoomScene
       objectReference: {fileID: 0}
+    - target: {fileID: 1834174065430514655, guid: 58bb8bc258faa1245afd7a3f635c0408, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5897661822975965465, guid: 58bb8bc258faa1245afd7a3f635c0408, type: 3}
       propertyPath: m_Name
       value: Canvas
