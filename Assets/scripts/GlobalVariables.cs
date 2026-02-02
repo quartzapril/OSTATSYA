@@ -23,6 +23,7 @@ public class GlobalVariables : MonoBehaviour
      public static bool CalFlag = false;
 
     public static bool TomatoAchievementUnlocked = false; //достижение помидор
+    public static bool AchievementZavtykalUnlocked = false; //достижение завтыкал
 
     public static string previousScene = ""; // Хранит имя предыдущей сцены
 

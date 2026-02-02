@@ -1,6 +1,6 @@
-using UnityEngine;   
-using TMPro;         
-using UnityEngine.UI; 
+using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 
 public class AchievementPopup : MonoBehaviour
@@ -19,14 +19,14 @@ public class AchievementPopup : MonoBehaviour
     // Сколько секунд показывать окошко (по умолчанию 3 секунды)
     [SerializeField] private float displayDuration = 3f;
 
-    
+
     private void Awake()
     {
         // Проверяем: существует ли уже другой объект с этим скриптом?
         if (Instance == null)
         {
             // Если НЕТ — делаем этот объект "главным"
-            Instance = this;  
+            Instance = this;
 
             DontDestroyOnLoad(gameObject);
         }
@@ -41,17 +41,24 @@ public class AchievementPopup : MonoBehaviour
             popupPanel.SetActive(false);  // false = скрыть, true = показать
     }
 
-    
+
     public void ShowAchievement(string achievementName, Sprite icon = null)
     {
-        
+
         if (popupPanel == null) return;
 
-       
+
         popupPanel.SetActive(true);
 
-       
-        achievementText.text = "Достижение получено:\n" + "Уже говоришь с овощами?\n";
+        // ДОБАВЛЕНО: разный текст для разных достижений (ничего не удалено из старого кода)
+        if (achievementName == "Мистер Помидор")
+        {
+            achievementText.text = "Достижение получено:\n" + "Уже говоришь с овощами?\n";
+        }
+        else if (achievementName == "Завтыкал")
+        {
+            achievementText.text = "Достижение получено:\n" + "Завтыкал\n";
+        }
 
         // 3. Если передана иконка — показываем её
         if (icon != null && achievementIcon != null)
@@ -66,11 +73,11 @@ public class AchievementPopup : MonoBehaviour
             achievementIcon.gameObject.SetActive(false);
         }
 
-        
+
         Invoke("HidePopup", displayDuration);
     }
 
-    
+
     private void HidePopup()
     {
         // Просто прячем панель
