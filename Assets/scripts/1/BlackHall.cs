@@ -3,6 +3,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 public class BlackHall : MonoBehaviour
 {
@@ -13,14 +16,27 @@ public class BlackHall : MonoBehaviour
 
     void Start()
     {
-        if (GlobalVariables.Day1 && GlobalVariables.Day1BlackHall)
+        if (SceneManager.GetActiveScene().name == "1" && GlobalVariables.Day1 && GlobalVariables.Day1BlackHall)
         {
             backgroundImage.sprite = newPicture;
 
         }
-        if (GlobalVariables.flagWires == true)
+        if (SceneManager.GetActiveScene().name == "1" && GlobalVariables.flagWires == true)
         {
             backgroundImage.sprite = newPicture1;
+        }
+
+        if (SceneManager.GetActiveScene().name == "DaysNames")
+        {
+            if (GlobalVariables.Day0 == true)
+            {
+                backgroundImage.sprite = newPicture;
+            }
+            else if (GlobalVariables.Day1 == true)
+            {
+                                backgroundImage.sprite = newPicture1;
+
+            }
         }
     }
 
