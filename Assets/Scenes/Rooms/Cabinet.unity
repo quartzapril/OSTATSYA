@@ -382,6 +382,18 @@ PrefabInstance:
       propertyPath: sceneName1
       value: HeroRoomScene
       objectReference: {fileID: 0}
+    - target: {fileID: 1347152270527519951, guid: 58bb8bc258faa1245afd7a3f635c0408, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347152270527519951, guid: 58bb8bc258faa1245afd7a3f635c0408, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347152270527519951, guid: 58bb8bc258faa1245afd7a3f635c0408, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 1834174065430514655, guid: 58bb8bc258faa1245afd7a3f635c0408, type: 3}
       propertyPath: m_text
       value: 

@@ -13,6 +13,7 @@ public class MenuButton : MonoBehaviour
     public void OpenMenu()
     {
         // янупюмъел рейсысч яжемс оепед оепеунднл б лемч
+        string currentScene = SceneManager.GetActiveScene().name;
         GlobalVariables.previousScene = SceneManager.GetActiveScene().name;
 
         StartCoroutine(FadeAndLoadMenu());
